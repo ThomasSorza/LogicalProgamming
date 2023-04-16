@@ -6,6 +6,7 @@ sintoma_de(cansancio, gripa).
 elimina(vitaminas,cansancio).
 elimina(aspirinas, fiebre).
 elimina(jarabe,tos).
+
 %primerPunto
 mostrar_sintomas(X,Y) :- sintoma_de(Y, X), display(Y).
 
