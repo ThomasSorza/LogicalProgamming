@@ -8,8 +8,10 @@ elimina(aspirinas, fiebre).
 elimina(jarabe,tos).
 %primerPunto
 mostrar_sintomas(X,Y) :- sintoma_de(Y, X), display(Y).
+
 %segundoPunto
 valor(X,Y) :- tiene_sintomas(X,Y),sintoma_de(Y,X).
+
 %tercerPunto
 enfermo(X,Y):-tiene_sintomas(X,Y),sintomas_de(Z,Y).
 recetar(X,Y):-enfermo_de(Y,A), sintoma_de(Z,Y)
