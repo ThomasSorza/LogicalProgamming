@@ -1,3 +1,4 @@
+%here we are declaring Facts
 rufo.
 mike.
 lulu.

@@ -1,5 +1,6 @@
 %This is a comment.
 %This is a comment btw.
+/* multiple line comment.*/
 
 %Declaring Facts:
 likes(mary,jhon).
@@ -14,9 +15,7 @@ likes(laura,thomas).
 
 %the not represents negation in syntax
 dating(X,Y) :-
-likes(X,Y),
-likes(Y,X).
+    likes(X,Y),
+    likes(Y,X).
 
-friendship(X,Y) :-
-likes(X,Y);
-likes(Y,X).
+friendship(X,Y) :- likes(X,Y); likes(Y,X).
