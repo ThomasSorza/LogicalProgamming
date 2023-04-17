@@ -47,7 +47,8 @@ hermanos(X, Y) :-
     padre(Z, Y), madre(R, Y),
     X \= Y.
 
-hermanastros(X, Y) :-
-    padre(Z, Y), padre(Z, X);
-    madre(G, Y), madre(G, X).
-%TODO: refactor hermanastros
+comparten_madre(X, Y) :-
+    madre(M, X),madre(M,Y).
+
+comparten_padre(X, Y) :-
+    padre(M, X),padre(M,Y).
