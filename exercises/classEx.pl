@@ -14,12 +14,10 @@ imprimir_sintomas(X) :-
     write('Síntomas de '), write(X), write(': '),
     findall(Y, sintoma_de(Y, X), L), write(L).
 
-%2nd task 
+%2nd task TODO: finish task 2 (get the task to develop). 
 valor(X,Y) : - tiene_sintomas(X,Y),sintoma_de(Y,X).
 
 %3rd task Prescribes medication to cure a particular illness
 recetar(X) :- 
     write('La medicina que debería tomar para acabar con la '), write(X), write(' es: '),
-    findall(M, elimina(M,Y),sintoma_de(Y, X), L), write(L).
-
-%TODO: finish task 2 and 3
+    findall(M, (elimina(M,Y),sintoma_de(Y, X)), L), write(L).
