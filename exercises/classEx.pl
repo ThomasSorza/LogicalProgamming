@@ -1,3 +1,5 @@
+%facts
+
 enfermo_de(manuel,gripa).
 tiene_sintomas(alicia,cansancio).
 sintoma_de(fiebre,gripa).
@@ -7,12 +9,17 @@ elimina(vitaminas,cansancio).
 elimina(aspirinas, fiebre).
 elimina(jarabe,tos).
 
-%primerPunto
-mostrar_sintomas(X,Y) :- sintoma_de(Y, X), display(Y).
+%1st task print all the symptoms of a illness in one line
+imprimir_sintomas(X) :- 
+    write('Síntomas de '), write(X), write(': '),
+    findall(Y, sintoma_de(Y, X), L), write(L).
 
-%segundoPunto
-valor(X,Y) :- tiene_sintomas(X,Y),sintoma_de(Y,X).
+%2nd task 
+valor(X,Y) : - tiene_sintomas(X,Y),sintoma_de(Y,X).
 
-%tercerPunto
-enfermo(X,Y):-tiene_sintomas(X,Y),sintomas_de(Z,Y).
-recetar(X,Y):-enfermo_de(Y,A), sintoma_de(Z,Y)
+%3rd task Prescribes medication to cure a particular illness
+recetar(X) :- 
+    write('La medicina que debería tomar para acabar con la '), write(X), write(' es: '),
+    findall(M, elimina(M,Y),sintoma_de(Y, X), L), write(L).
+
+%TODO: finish task 2 and 3
