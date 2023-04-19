@@ -14,6 +14,10 @@ imprimir_sintomas(X) :-
     write('Síntomas de '), write(X), write(': '),
     findall(Y, sintoma_de(Y, X), L), write(L).
 
+sintomas(X):-
+    sintoma_de(Y,X)
+    write(Y).
+
 %2nd task TODO: finish task 2 (get the task to develop). 
 valor(X,Y) : - tiene_sintomas(X,Y),sintoma_de(Y,X).
 
